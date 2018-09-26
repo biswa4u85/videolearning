@@ -22,7 +22,7 @@ export default class ArticleDetails extends React.Component {
     }
     render() {
         return (
-            <View behavior="padding" style={styles.container}>                
+            <View behavior="padding" style={styles.container}>          
                    
                     <ScrollView style={styles.contentArea}>
                         <View style={styles.contSection}>
