@@ -11,7 +11,6 @@ import PopupDialog, {
     ScaleAnimation,
     FadeAnimation,
 } from 'react-native-popup-dialog';
-import QuizPopup from '../QuizPopup/'
 import { Color } from '@common'
 
 const slideAnimation = new SlideAnimation({ slideFrom: 'bottom' });
@@ -35,26 +34,13 @@ export default class Quiz extends React.Component {
         this.fadeAnimationDialog.show();
     }
     render() {
-       
-        return (            
+
+        return (
 
             <ScrollView style={styles.container}>
-
-                <PopupDialog
-                    dialogStyle={{padding:10,backgroundColor: 'rgba(52, 52, 52, 0)'}}   
-                    height={600}                 
-                    ref={(popupDialog) => {
-                        this.scaleAnimationDialog = popupDialog;
-                    }}
-                    dialogAnimation={scaleAnimation}>
-
-                    <QuizPopup navigate={this.props.navigate}  onPress={() => { this.scaleAnimationDialog.dismiss(); }} />
-
-                </PopupDialog>
-
                 <View style={styles.bannerCont}>
                     {/* <ScrollView horizontal={true} pagingEnabled={true}> */}
-                    <TouchableOpacity style={styles.bannerSliderBox}  onPress={this.showScaleAnimationDialog}>
+                    <TouchableOpacity style={styles.bannerSliderBox} onPress={this.props.showScaleAnimationDialogQuiz}>
                         <AutoHeightImage width={Dimensions.get('window').width} source={require('../images/img6.jpg')} />
                         <View style={styles.bannerQuote}>
                             <Text style={styles.bannerTxt}>Scientific Discoveries</Text>
@@ -68,32 +54,32 @@ export default class Quiz extends React.Component {
                         <Text style={styles.subTitle}>Random Quiz</Text>
                     </View>
                     <ScrollView style={styles.thumbSlider} horizontal={true}>
-                        <TouchableOpacity style={styles.thumbSlideBox} onPress={this.showScaleAnimationDialog}>
+                        <TouchableOpacity style={styles.thumbSlideBox} onPress={this.props.showScaleAnimationDialogQuiz}>
                             <View><Image style={styles.slideImg} source={require('../images/img1.jpg')} /></View>
                             <View style={styles.slideTxtArea}>
                                 <Text style={styles.slideTitle}>Lorem ipsum</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.thumbSlideBox} onPress={this.showScaleAnimationDialog}>
+                        <TouchableOpacity style={styles.thumbSlideBox} onPress={this.props.showScaleAnimationDialogQuiz}>
                             <View><Image style={styles.slideImg} source={require('../images/img2.jpg')} /></View>
                             <View style={styles.slideTxtArea}>
                                 <Text style={styles.slideTitle}>Lorem ipsum</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.thumbSlideBox} onPress={this.showScaleAnimationDialog}>
+                        <TouchableOpacity style={styles.thumbSlideBox} onPress={this.props.showScaleAnimationDialogQuiz}>
                             <View><Image style={styles.slideImg} source={require('../images/img1.jpg')} /></View>
                             <View style={styles.slideTxtArea}>
                                 <Text style={styles.slideTitle}>Lorem ipsum</Text>
                             </View>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.thumbSlideBox} onPress={this.showScaleAnimationDialog}>
+                        <TouchableOpacity style={styles.thumbSlideBox} onPress={this.props.showScaleAnimationDialogQuiz}>
                             <View><Image style={styles.slideImg} source={require('../images/img2.jpg')} /></View>
                             <View style={styles.slideTxtArea}>
                                 <Text style={styles.slideTitle}>Lorem ipsum</Text>
                             </View>
                         </TouchableOpacity>
                     </ScrollView>
-                </View>            
+                </View>
 
             </ScrollView>
         );
