@@ -16,6 +16,7 @@ import Vinay from "../Vinay/vinay";
 import MessagePopup from '../MessagePopup/'
 import FinishPopup from '../FinishPopup/'
 import QuizPopup from '../QuizPopup/'
+import { TopMenu } from '../../navigation/IconNav'
 import PopupDialog, {
     DialogTitle,
     DialogButton,
@@ -141,7 +142,7 @@ class Index extends React.Component {
 
             <Container>
                 <PopupDialog
-                    dialogStyle={{padding:10,backgroundColor: 'rgba(52, 52, 52, 0)'}}                    
+                    dialogStyle={{ padding: 10, backgroundColor: 'rgba(52, 52, 52, 0)' }}
                     ref={(popupDialog) => {
                         this.scaleAnimationDialog = popupDialog;
                     }}
@@ -166,9 +167,10 @@ class Index extends React.Component {
 
                 <Header style={styles.headerBg}>
                     <Left>
-                        <Button transparent >
+                        {TopMenu()}
+                        {/* <Button transparent >
                             <Icon name='menu' />
-                        </Button>
+                        </Button> */}
                     </Left>
                     <Body>
                         <Title style={styles.title}>Mobile Learning App</Title>
