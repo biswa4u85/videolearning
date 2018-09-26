@@ -8,6 +8,9 @@ import button from "./Button/Button"
 import buttonIndex from "./Button";
 import facebookKit from "./FacebookKit";
 import drawer from "./Drawer";
+import _MyToast from './MyToast';
+import _MyNetInfo from './MyNetInfo';
+
 
 export const TextInput = textInput;
 export const TabBarIcon = tabBarIcon;
@@ -19,3 +22,5 @@ export const Button = button;
 export const ButtonIndex = buttonIndex;
 export const FacebookKit = facebookKit;
 export const Drawer = drawer;
+export const MyToast = _MyToast;
+export const MyNetInfo = _MyNetInfo;
