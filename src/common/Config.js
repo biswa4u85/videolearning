@@ -6,7 +6,7 @@ export default {
         isMultiChild: true,
         listMenuUnlogged: [{
             text: 'Login',
-            icon: 'login',
+            icon: 'folder',
             routeName: 'LoginScreen',
             params: {
                 isLogout: false
@@ -15,7 +15,7 @@ export default {
         // user logged in
         listMenuLogged: [{
             text: 'Logout',
-            icon: 'log-out',
+            icon: 'folder',
             routeName: 'Custompage',
             params: {
                 isLogout: true
@@ -25,12 +25,12 @@ export default {
         listMenu: [
             {
                 text: 'Edit Profile',
-                icon: 'edit',
+                icon: 'folder',
                 routeName: 'Signup',
             },
             {
                 text: 'Add Payment',
-                icon: 'creative-commons',
+                icon: 'folder',
                 routeName: 'Payment',
             },
             {
