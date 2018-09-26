@@ -6,7 +6,7 @@ import { Color, Styles } from '@common'
 
 export default class ArticleDetails extends React.Component {
     static navigationOptions = ({ navigation,state }) => ({
-        // headerTitle: state.articleDetail,
+        headerTitle: 'Facts about Valentines\'s Day',
         // headerLeft: null,
         headerRight: null,
         headerTintColor: Color.white,
@@ -23,9 +23,7 @@ export default class ArticleDetails extends React.Component {
     render() {
         return (
             <View behavior="padding" style={styles.container}>                
-                    <View style={styles.headerBg}>
-                        <Text style={styles.headerTitle}>Facts about Valentines's Day</Text>
-                    </View>
+                   
                     <ScrollView style={styles.contentArea}>
                         <View style={styles.contSection}>
                             <Text style={styles.contTitle}>Lorem Ipsum has been the industry's standard dummy </Text>
