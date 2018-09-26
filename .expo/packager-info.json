@@ -1,9 +1,9 @@
 {
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19003,
+  "packagerPid": 66754,
+  "expoServerNgrokUrl": "https://f5-gym.biswa4u85.videolearning.exp.direct",
+  "packagerNgrokUrl": "https://packager.f5-gym.biswa4u85.videolearning.exp.direct",
+  "ngrokPid": 66861,
   "devToolsPort": 19002
 }

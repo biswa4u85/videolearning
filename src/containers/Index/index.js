@@ -152,15 +152,15 @@ class Index extends React.Component {
 
                 </PopupDialog>
                 {/*POPUP MENU Start*/}
-                
+
                 {/*POPUP MENU End*/}
 
                 <Header style={styles.headerBg}>
                     <Left>
-                        {/* {TopMenu()} */}
-                        <Button transparent  >
-    <Icon name='menu' />
-</Button>
+                        {TopMenu()}
+                        {/* <Button transparent  >
+                            <Icon name='menu' />
+                        </Button> */}
                     </Left>
                     <Body>
                         <Title style={styles.title}>Mobile Learning App</Title>
@@ -183,21 +183,21 @@ class Index extends React.Component {
                             <Icon name='search' />
                         </Button>
                         <View style={{ position: 'absolute', right: 0, top: 0, }}>
-                    <Menu 
-                    ref={this.setMenuRef} 
-                    button={ <Button transparent onPress={() => this.showMenu()}>
-                    <Icon name='md-more' />
-                </Button>}
-                    style={{ width: 200, }}>
-                        <MenuItem onPress={() => { this.hideMenu(); navigate('Login') }}><Icon name='md-log-in' style={styles.rightMenuIcon} /> <Text style={{ paddingLeft: 20 }}>Logi In</Text></MenuItem>
-                        <MenuItem onPress={() => { this.hideMenu(); navigate('WatchLater') }}><Icon name='watch' style={styles.rightMenuIcon} /> <Text>Watch Later</Text></MenuItem>
-                        <MenuItem onPress={() => { this.hideMenu(); navigate('Download') }}><Icon name='download' style={styles.rightMenuIcon} /> <Text>Download List</Text></MenuItem>
-                        <MenuItem onPress={() => { this.hideMenu(); navigate('AboutUs') }}><Icon name='people' style={styles.rightMenuIcon} /> <Text>About Us</Text></MenuItem>
-                        <MenuItem onPress={() => { this.hideMenu(); this.openShare() }}><Icon name='share' style={styles.rightMenuIcon} /> <Text>Share</Text></MenuItem>
-                        <MenuItem onPress={() => { this.hideMenu(); this.showScaleAnimationDialog() }}><Icon name='send' style={styles.rightMenuIcon} /> <Text>Send Feedback</Text></MenuItem>
-                        <MenuItem onPress={() => { this.hideMenu(); navigate('Notifications') }}><Icon name='notifications' style={styles.rightMenuIcon} /><Text>Notification</Text></MenuItem>
-                    </Menu>
-                </View>
+                            <Menu
+                                ref={this.setMenuRef}
+                                button={<Button transparent onPress={() => this.showMenu()}>
+                                    <Icon name='md-more' />
+                                </Button>}
+                                style={{ width: 200, }}>
+                                <MenuItem onPress={() => { this.hideMenu(); navigate('Login') }}><Icon name='md-log-in' style={styles.rightMenuIcon} /> Logi In</MenuItem>
+                                <MenuItem onPress={() => { this.hideMenu(); navigate('WatchLater') }}><Icon name='watch' style={styles.rightMenuIcon} /> Watch Later</MenuItem>
+                                <MenuItem onPress={() => { this.hideMenu(); navigate('Download') }}><Icon name='download' style={styles.rightMenuIcon} /> Download List</MenuItem>
+                                <MenuItem onPress={() => { this.hideMenu(); navigate('AboutUs') }}><Icon name='people' style={styles.rightMenuIcon} /> About Us</MenuItem>
+                                <MenuItem onPress={() => { this.hideMenu(); this.openShare() }}><Icon name='share' style={styles.rightMenuIcon} /> Share</MenuItem>
+                                <MenuItem onPress={() => { this.hideMenu(); this.showScaleAnimationDialog() }}><Icon name='send' style={styles.rightMenuIcon} /> Send Feedback</MenuItem>
+                                <MenuItem onPress={() => { this.hideMenu(); navigate('Notifications') }}><Icon name='notifications' style={styles.rightMenuIcon} /> Notification</MenuItem>
+                            </Menu>
+                        </View>
 
                         {/* */}
                     </Right>

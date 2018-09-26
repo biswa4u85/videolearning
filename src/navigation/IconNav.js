@@ -11,7 +11,8 @@ const Logo = () => (
 )
 
 const TopMenu = (color = Color.white) => (
-    <TouchableOpacity style={{ paddingLeft: 10, marginTop: (Platform.OS === 'ios') ? -15 : 0 }} hitSlop={hitSlop} onPress={openDrawer}>
+    // <Button transparent hitSlop={hitSlop} onPress={openDrawer}><Icon name='menu' /></Button>
+    <TouchableOpacity style={{ paddingLeft: 10, marginTop: (Platform.OS === 'ios') ? -17 : 0 }} hitSlop={hitSlop} onPress={openDrawer}>
         <Icon name='menu' />
     </TouchableOpacity>
 )
