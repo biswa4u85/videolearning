@@ -1,9 +1,9 @@
 {
+  "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 12164,
-  "expoServerNgrokUrl": "https://f5-gym.rakesh-biswal768.videolearning.exp.direct",
-  "packagerNgrokUrl": "https://packager.f5-gym.rakesh-biswal768.videolearning.exp.direct",
-  "ngrokPid": 1360,
-  "devToolsPort": 19002
+  "packagerPid": 14816,
+  "expoServerNgrokUrl": "https://ie-u6y.rakesh-biswal768.videolearning.exp.direct",
+  "packagerNgrokUrl": "https://packager.ie-u6y.rakesh-biswal768.videolearning.exp.direct",
+  "ngrokPid": 11500
 }

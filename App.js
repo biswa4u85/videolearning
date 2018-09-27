@@ -26,7 +26,20 @@ export default class App extends React.Component {
     await Expo.Font.loadAsync({
       'Roboto': require('@assets/Fonts/Roboto.ttf'),
       'Roboto_medium': require('@assets/Fonts/Roboto_medium.ttf'),
-      Ionicons: require("@expo/vector-icons/fonts/Ionicons.ttf")
+      'Entypo': require('@assets/Fonts/Entypo.ttf'),
+      'EvilIcons': require('@assets/Fonts/EvilIcons.ttf'),
+      'Feather': require('@assets/Fonts/Feather.ttf'),
+      'FontAwesome': require('@assets/Fonts/FontAwesome.ttf'),
+      'FontAwesome5_Brands': require('@assets/Fonts/FontAwesome5_Brands.ttf'),
+      'FontAwesome5_Regular': require('@assets/Fonts/FontAwesome5_Regular.ttf'),
+      'FontAwesome5_Solid': require('@assets/Fonts/FontAwesome5_Solid.ttf'),
+      'Foundation': require('@assets/Fonts/Foundation.ttf'),
+      'Ionicons': require('@assets/Fonts/Ionicons.ttf'),
+      'MaterialCommunityIcons': require('@assets/Fonts/MaterialCommunityIcons.ttf'),
+      'MaterialIcons': require('@assets/Fonts/MaterialIcons.ttf'),
+      'Octicons': require('@assets/Fonts/Octicons.ttf'),
+      'SimpleLineIcons': require('@assets/Fonts/SimpleLineIcons.ttf'),
+      'Zocial': require('@assets/Fonts/Zocial.ttf'),
     });
     this.setState({ appIsReady: true })
   }

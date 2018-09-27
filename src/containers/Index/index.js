@@ -136,6 +136,18 @@ class Index extends React.Component {
         this.fadeAnimationDialog.show();
     }
 
+    showScaleAnimationDialogQuiz = () => {
+        this.scaleAnimationDialogQuiz.show();
+    }
+
+    showSlideAnimationDialogQuiz = () => {
+        this.slideAnimationDialogQuiz.show();
+    }
+
+    showFadeAnimationDialogQuiz = () => {
+        this.fadeAnimationDialogQuiz.show();
+    }
+
     render() {
         const { navigate } = this.props.navigation
         return (
@@ -143,13 +155,17 @@ class Index extends React.Component {
             <Container>
                 <PopupDialog
                     dialogStyle={{ padding: 10, backgroundColor: 'rgba(52, 52, 52, 0)' }}
-                    ref={(popupDialog) => {
-                        this.scaleAnimationDialog = popupDialog;
-                    }}
+                    ref={(popupDialog) => { this.scaleAnimationDialog = popupDialog; }}
                     dialogAnimation={scaleAnimation}>
-
                     <MessagePopup onPress={() => { this.scaleAnimationDialog.dismiss(); }} />
-
+                </PopupDialog>
+                {/* Quiz */}
+                <PopupDialog
+                    dialogStyle={{ padding: 10, backgroundColor: 'rgba(52, 52, 52, 0)' }}
+                    height={700}
+                    ref={(popupDialog) => { this.scaleAnimationDialogQuiz = popupDialog; }}
+                    dialogAnimation={scaleAnimation}>
+                    <QuizPopup navigate={navigate} onPress={() => { this.scaleAnimationDialogQuiz.dismiss(); }} />
                 </PopupDialog>
                 {/*POPUP MENU Start*/}
 
@@ -190,12 +206,12 @@ class Index extends React.Component {
                                 </Button>}
                                 style={{ width: 200, }}>
                                 <MenuItem onPress={() => { this.hideMenu(); navigate('Login') }}><Icon name='md-log-in' style={styles.rightMenuIcon} /> Logi In</MenuItem>
-                                <MenuItem onPress={() => { this.hideMenu(); navigate('WatchLater') }}><Icon name='watch' style={styles.rightMenuIcon} /> Watch Later</MenuItem>
+                                {/* <MenuItem onPress={() => { this.hideMenu(); navigate('WatchLater') }}><Icon name='watch' style={styles.rightMenuIcon} /> Watch Later</MenuItem>
                                 <MenuItem onPress={() => { this.hideMenu(); navigate('Download') }}><Icon name='download' style={styles.rightMenuIcon} /> Download List</MenuItem>
                                 <MenuItem onPress={() => { this.hideMenu(); navigate('AboutUs') }}><Icon name='people' style={styles.rightMenuIcon} /> About Us</MenuItem>
                                 <MenuItem onPress={() => { this.hideMenu(); this.openShare() }}><Icon name='share' style={styles.rightMenuIcon} /> Share</MenuItem>
                                 <MenuItem onPress={() => { this.hideMenu(); this.showScaleAnimationDialog() }}><Icon name='send' style={styles.rightMenuIcon} /> Send Feedback</MenuItem>
-                                <MenuItem onPress={() => { this.hideMenu(); navigate('Notifications') }}><Icon name='notifications' style={styles.rightMenuIcon} /> Notification</MenuItem>
+                                <MenuItem onPress={() => { this.hideMenu(); navigate('Notifications') }}><Icon name='notifications' style={styles.rightMenuIcon} /> Notification</MenuItem> */}
                             </Menu>
                         </View>
 
@@ -224,7 +240,7 @@ class Index extends React.Component {
                         <Articles navigate={navigate} />
                     </Tab>
                     <Tab textStyle={{ color: '#fff' }} tabStyle={{ backgroundColor: Color.primary }} activeTabStyle={{ backgroundColor: Color.primary }} heading="Quiz">
-                        <Quiz navigate={navigate} />
+                        <Quiz showScaleAnimationDialogQuiz={this.showScaleAnimationDialogQuiz} navigate={navigate} />
                     </Tab>
                     <Tab textStyle={{ color: '#fff' }} tabStyle={{ backgroundColor: Color.primary }} activeTabStyle={{ backgroundColor: Color.primary }} heading="Courses">
                         <Cources navigate={navigate} />

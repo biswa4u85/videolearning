@@ -1,7 +1,8 @@
 import React from "react";
 import { TouchableOpacity, Platform, View, Text, Image } from 'react-native';
 import { Styles, Color, Images, Constants } from '@common'
-import { Button, Icon } from 'native-base';
+// import { Icon } from 'native-base';
+import Icon from 'react-native-vector-icons/Entypo'
 import { openDrawer } from "@app/Omni"
 
 const hitSlop = { top: 20, right: 20, bottom: 20, left: 20 };
@@ -11,7 +12,7 @@ const Logo = () => (
 )
 
 const TopMenu = (color = Color.white) => (
-    <TouchableOpacity style={{ marginTop:-22 }} hitSlop={hitSlop} onPress={openDrawer}>
+    <TouchableOpacity style={{ paddingLeft: 10, marginTop: (Platform.OS === 'ios') ? -17 : 0 }} hitSlop={hitSlop} onPress={openDrawer}>
         <Icon name='menu' />
     </TouchableOpacity>
 )
