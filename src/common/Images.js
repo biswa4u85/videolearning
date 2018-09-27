@@ -1,6 +1,6 @@
 const Images = {
-  // backBtn: require('@images/back.png'),
-  
+  loginLogo: require('@images/default_avatar.jpg'),
+
 };
 
 export default Images;

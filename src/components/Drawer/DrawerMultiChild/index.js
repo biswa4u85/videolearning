@@ -43,8 +43,6 @@ class DrawerMultiChild extends PureComponent {
   render() {
     const {
       userProfile,
-      backgroundMenu,
-      colorTextMenu,
     } = this.props
     const user = userProfile.user
     const avatar = (user && user.profileImage) ? { uri: user.profileImage } : Images.loginLogo
@@ -57,10 +55,10 @@ class DrawerMultiChild extends PureComponent {
           />
           <View style={styles.textContainer}>
             <Text style={styles.fullName}>
-              {user ? user.firstName : ''} {user ? user.lastName : ''}
+              {user ? user.firstName : 'User Name'} {user ? user.lastName : ''}
             </Text>
             <Text style={styles.email}>
-              {user ? user.mobile : ''}
+              {user ? user.mobile : '+91 0000000000'}
             </Text>
           </View>
         </View>
