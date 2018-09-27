@@ -5,7 +5,9 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs, S
 import { ScrollView } from 'react-native-gesture-handler';
 import AutoHeightImage from 'react-native-auto-height-image';
 // import YouTube from 'react-native-youtube'
-import { Color } from '@common'
+import { Video } from 'expo';
+import VideoPlayer from '@expo/videoplayer';
+import { Color,Styles } from '@common'
 
 
 
@@ -24,6 +26,17 @@ export default class VideoDetails extends React.Component {
             <ScrollView style={styles.container}>
                 <View style={styles.bannerCont}>
                     <View style={styles.bannerSliderBox}>
+                    <VideoPlayer
+  videoProps={{
+    shouldPlay: true,
+    resizeMode: Video.RESIZE_MODE_CONTAIN,
+    source: {
+      uri: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
+    },
+  }}
+  isPortrait={true}
+  playFromPositionMillis={0}
+/>
                         {/* <YouTube
   videoId="KVZ-P-ZI6W4"   // The YouTube video ID
   play={true}             // control playback of video with true/false
