@@ -173,10 +173,7 @@ class Index extends React.Component {
 
                 <Header style={styles.headerBg}>
                     <Left>
-                        {TopMenu()}
-                        {/* <Button transparent  >
-                            <Icon name='menu' />
-                        </Button> */}
+                        {TopMenu()}                        
                     </Left>
                     <Body>
                         <Title style={styles.title}>Mobile Learning App</Title>
