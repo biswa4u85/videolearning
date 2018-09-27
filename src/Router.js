@@ -23,10 +23,10 @@ class Router extends React.PureComponent {
             <MenuSide
                 goToScreen={this.goToScreen}
                 routes={<View style={Styles.app}>
-                    <StatusBar
+                    {/* <StatusBar
                         hidden={Device.isIphoneX ? false :
                             !Config.showStatusBar}
-                    />
+                    /> */}
                     <Navigation ref={'navigator'} />
                     <MyToast />
                     <MyNetInfo />
