@@ -1,9 +1,9 @@
 {
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 5088,
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
   "expoServerNgrokUrl": "https://ie-u6y.biswa4u85.videolearning.exp.direct",
   "packagerNgrokUrl": "https://packager.ie-u6y.biswa4u85.videolearning.exp.direct",
-  "ngrokPid": 5144,
+  "ngrokPid": 13133,
   "devToolsPort": 19002
 }
