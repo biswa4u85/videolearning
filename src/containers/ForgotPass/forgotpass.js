@@ -51,12 +51,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-    headerBg: {
-        backgroundColor: Color.primary,
-        paddingTop: 35,
-        paddingBottom: 15,
-        paddingHorizontal: 20,
-    },
+   
     headerTitle: {
         fontSize: 21,
         fontWeight: 'bold',

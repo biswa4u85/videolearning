@@ -12,7 +12,18 @@ let Styles = {
     navBarHeight: Platform !== 'ios' ? (height - heightWindow) : 0,
     headerHeight: Platform.OS === 'ios' ? 40 : 56,
     thumbnailRatio: 1.2,
-
+    headerBg: {
+        backgroundColor: Color.primary,
+        paddingTop: 35,
+        paddingBottom: 15,
+        paddingHorizontal: 20,
+        flexDirection: 'row',
+    },
+    headerTitle: {
+        fontSize: 21,
+        fontWeight: 'bold',
+        color: Color.white,
+    },
     app: {
         flexGrow: 1,
         backgroundColor: "#fff",
@@ -37,18 +48,7 @@ Styles.Common = {
     toolbarFloatActive: {
         backgroundColor: '#ff0000',
     },
-    headerBg: {
-        backgroundColor: Color.primary,
-        paddingTop: 35,
-        paddingBottom: 15,
-        paddingHorizontal: 20,
-        flexDirection: 'row',
-    },
-    headerTitle: {
-        fontSize: 21,
-        fontWeight: 'bold',
-        color: Color.white,
-    },
+    
     logo: {
         width: Platform.OS === 'ios' ? 280 : 200,
         height: Platform.OS === 'ios' ? 40 : 40,

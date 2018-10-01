@@ -1,6 +1,5 @@
 const Images = {
-  loginLogo: require('@images/default_avatar.jpg'),
-
+  loginLogo: require('@images/userimg-bg.jpg'),
 };
 
 export default Images;

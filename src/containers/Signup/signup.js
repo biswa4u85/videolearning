@@ -36,7 +36,7 @@ export default class Signup extends React.Component {
                             value={Name}
                             onChangeText={(Name) => this.setState({ Name })}
                         />
-                        <TextField
+                        <TextField                        
                             label='Email Address'
                             baseColor={Color.primary}
                             tintColor={Color.primary}

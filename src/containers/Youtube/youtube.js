@@ -291,7 +291,8 @@ const styles = StyleSheet.create({
     },
     thumbSlideBox: {        
         backgroundColor:Color.white,
-        marginRight: 10,
+        marginRight: 9,
+        marginLeft: 1,
         borderRadius: 4,
         elevation: 1,
         width: 130,
@@ -312,6 +313,6 @@ const styles = StyleSheet.create({
         color: Color.grey,
         paddingTop: 2,
         paddingBottom: 5,
-        textAlign: 'center',
+        paddingHorizontal:10,         
     },
 });
