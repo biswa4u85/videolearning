@@ -171,17 +171,14 @@ class Index extends React.Component {
 
                 {/*POPUP MENU End*/}
 
-                <Header style={styles.headerBg}>
-                    <Left>
-                        {TopMenu()}
-                        {/* <Button transparent  >
-                            <Icon name='menu' />
-                        </Button> */}
-                    </Left>
-                    <Body>
+                <View style={styles.headerBg}>
+                    <View>
+                        {TopMenu()}                        
+                    </View>
+                    <View>
                         <Title style={styles.title}>Mobile Learning App</Title>
-                    </Body>
-                    <Right>
+                    </View>
+                    <View>
                         {/*Search Start*/}
                         <View>
                             {
@@ -195,14 +192,14 @@ class Index extends React.Component {
                             }
                         </View>
                         {/*Search End*/}
-                        <Button transparent onPress={() => this.searchBar.show()}>
-                            <Icon name='search' />
+                        <Button style={styles.searchIcon} transparent onPress={() => this.searchBar.show()}>
+                            <Icon style={styles.headerIcon} name='search' />
                         </Button>
-                        <View style={{ position: 'absolute', right: 0, top: 0, }}>
+                         <View style={{ position: 'absolute', right: 0, top: 0, }}>
                             <Menu
                                 ref={this.setMenuRef}
                                 button={<Button transparent onPress={() => this.showMenu()}>
-                                    <Icon name='md-more' />
+                                    <Icon style={styles.headerIcon} name='more' />
                                 </Button>}
                                 style={{ width: 200, }}>
                                 <MenuItem onPress={() => { this.hideMenu(); navigate('Login') }}><Icon name='md-log-in' style={styles.rightMenuIcon} /> Logi In</MenuItem>
@@ -214,17 +211,14 @@ class Index extends React.Component {
                                 <MenuItem onPress={() => { this.hideMenu(); navigate('Notifications') }}><Icon name='notifications' style={styles.rightMenuIcon} /> Notification</MenuItem>
                             </Menu>
                         </View>
-
-                        {/* */}
-                    </Right>
-                    <SearchBar
-                        style={{ top: 60, marginTop: 60, }}
+                    </View>
+                    <SearchBar                        
                         ref={(ref) => this.searchBar = ref}
                         data={items}
                         handleResults={this._handleResults}
                         hideOnLoad
                     />
-                </Header>
+                </View>
 
                 <Tabs renderTabBar={() => <ScrollableTab />}>
                     <Tab textStyle={{ color: '#fff' }} tabStyle={{ backgroundColor: Color.primary }} activeTabStyle={{ backgroundColor: Color.primary }} heading="Home">
@@ -261,18 +255,15 @@ class Index extends React.Component {
 const styles = StyleSheet.create({
     headerBg: {
         backgroundColor: Color.primary,
+        justifyContent:'space-between',
         alignItems: 'center',
-        paddingTop: 47,
-        paddingBottom: 25,
-        elevation: 4,
-    },
-    topBar: {
-        flexDirection: 'row',
-        paddingBottom: 10,
-        alignItems: 'center',
-    },
+        paddingTop: 35,        
+        // paddingBottom: 25,       
+        flexDirection:'row',
+        
+    },    
     title: {
-        fontSize: 21,
+        fontSize: 24,
         fontWeight: 'bold',
         color: '#fff',
     },
@@ -297,6 +288,12 @@ const styles = StyleSheet.create({
         fontSize: 18,
         width: 50,
     },
+    searchIcon:{
+        marginRight:30,
+    },
+    headerIcon:{
+        color:Color.white,
+    }
 });
 
 export default Index

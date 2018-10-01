@@ -40,7 +40,7 @@ export default class Login extends React.Component {
                     </View>
 
                     <Form style={styles.loginForm}>
-                        <TextField
+                        <TextField                            
                             label='Email id / mobile no'
                             baseColor={Color.primary}
                             tintColor={Color.primary}
@@ -90,12 +90,12 @@ const styles = StyleSheet.create({
     },
     headerBg: {
         backgroundColor: Color.primary,
-        paddingTop: 40,
+        paddingTop: 35,
         paddingBottom: 15,
         paddingHorizontal: 20,
     },
     headerTitle: {
-        fontSize: 21,
+        fontSize: 24,
         fontWeight: 'bold',
         color: Color.white,
     },
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         paddingBottom: 25,
     },
     subTitleTxt: {
-        fontSize: 24,
+        fontSize: 28,
         fontWeight: 'bold',
         color: Color.primary,
         textAlign: 'center',
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
         backgroundColor: Color.primary,
         paddingVertical: 15,
         marginHorizontal: 40,
-        marginVertical: 25,
+        marginVertical: 30,
     },
     loginButtTxt: {
         fontSize: 18,
@@ -149,6 +149,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         marginHorizontal: 25,
+        marginTop:10,
     },
     footerLink: {
 

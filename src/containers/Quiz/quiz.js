@@ -148,12 +148,13 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     thumbSlideBox: {
-        backgroundColor: Color.white,
-        marginRight: 10,
+        backgroundColor:Color.white,
+        marginRight: 9,
+        marginLeft: 1,
         borderRadius: 4,
         elevation: 1,
         width: 130,
-        marginBottom: 1,
+        marginBottom:1,
     },
     slideImg: {
         width: 130,
@@ -170,7 +171,7 @@ const styles = StyleSheet.create({
         color: Color.grey,
         paddingTop: 2,
         paddingBottom: 5,
-        textAlign: 'center',
+        paddingHorizontal:10,
     },
 
 

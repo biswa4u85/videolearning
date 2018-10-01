@@ -13,12 +13,12 @@ import { Color,Styles } from '@common'
 
 export default class VideoDetails extends React.Component {
     static navigationOptions = ({ navigation }) => ({
-        headerTitle: 'Watch Later',
-        // headerLeft: null,
-        headerRight: null,
-        headerTintColor: Color.white,
-        headerStyle: { backgroundColor: 'transparent' },
-        headerTitleStyle: Styles.headerTitle,
+        header: null,
+        // headerTitle: 'Watch Later',
+        // headerRight: null,
+        // headerTintColor: Color.white,
+        // headerStyle: { backgroundColor: 'transparent' },
+        // headerTitleStyle: Styles.headerTitle,
     })
     render() {
 
@@ -54,7 +54,7 @@ export default class VideoDetails extends React.Component {
                     </View>
                     <View style={styles.videoDetails}>
                         <Content style={{ borderWidth: 0 }}>
-                            <Accordion noBorder dataArray={[{ title: "Sleep Well | Great Plaus", content: "Sleep Well | Great Plaus" }]} headerStyle={{ flexDirection: "row", padding: 10, justifyContent: "space-between", alignItems: "center", borderColor: "#fff" }} contentStyle={{ backgroundColor: "#F1F1F1" }} />
+                            <Accordion noBorder dataArray={[{ title: "Sleep Well | Great Plaus", content: "Sleep Well | Great Plaus" }]} headerStyle={{ flexDirection: "row", padding: 10, justifyContent: "space-between", alignItems: "center", borderColor: "#fff", borderWidth:0, }} contentStyle={{ backgroundColor: "#F1F1F1" }} />
                         </Content>
                         <View style={styles.videoSocialArea}>
                             <View style={styles.leftArea}>
@@ -117,14 +117,15 @@ const styles = StyleSheet.create({
     },
     videoDetails: {
         backgroundColor: Color.greyBg,
-        paddingVertical: 10,
-        paddingHorizontal: 15,
+        paddingBottom: 10,
+        paddingHorizontal: 0,
     },
     videoSocialArea: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginTop: 15,
+        marginTop: 10,
+        paddingHorizontal:15,
     },
     leftArea: {
         flexDirection: 'row',
@@ -167,12 +168,13 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
     },
     thumbSlideBox: {
-        backgroundColor: Color.white,
-        marginRight: 10,
-        borderRadius: 3,
+        backgroundColor:Color.white,
+        marginRight: 9,
+        marginLeft: 1,
+        borderRadius: 4,
         elevation: 1,
         width: 130,
-        marginBottom: 1,
+        marginBottom:1, 
     },
     slideImg: {
         width: 130,
@@ -189,6 +191,6 @@ const styles = StyleSheet.create({
         color: Color.grey,
         paddingTop: 2,
         paddingBottom: 5,
-        textAlign: 'center',
+        paddingHorizontal:10,
     },
 });

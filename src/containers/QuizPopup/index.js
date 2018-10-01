@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },    
     headerImg:{
         width:null,
-        height:120,   
+        height:200,   
     },
     imgTxt:{
         fontSize:14,
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-between',
-        paddingVertical:10,
+        paddingVertical:12,
         paddingHorizontal:10,        
     },
     detailsListTxt:{
