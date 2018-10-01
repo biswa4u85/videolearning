@@ -4,20 +4,20 @@ import { Form, Input, Label } from 'native-base';
 import { StyleSheet, Text, View, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native';
 import { Color } from '@common'
 
-const INIT_STATE={
+const INIT_STATE = {
     Email: '',
     Mobile: '',
     Password: '',
 }
 export default class Login extends React.Component {
-    static navigationOptions = ({ navigation }) => ({        
-        header: null      
+    static navigationOptions = ({ navigation }) => ({
+        header: null
     })
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state = {...INIT_STATE};
-    }   
+        this.state = { ...INIT_STATE };
+    }
 
     render() {
 
@@ -40,12 +40,14 @@ export default class Login extends React.Component {
                     </View>
 
                     <Form style={styles.loginForm}>
-                        <TextField                            
+                        <TextField
                             label='Email id / mobile no'
                             baseColor={Color.primary}
                             tintColor={Color.primary}
                             // onEndEditing={() => this.ref.password && this.ref.password.focus()}
                             labelHeight={26}
+                            fontSize={18}
+                            lineWidth={2}
                             value={Email}
                             onChangeText={(Email) => this.setState({ Email })}
                         />
@@ -55,6 +57,8 @@ export default class Login extends React.Component {
                             baseColor={Color.primary}
                             tintColor={Color.primary}
                             labelHeight={26}
+                            fontSize={18}
+                            lineWidth={2}
                             value={Password}
                             onChangeText={(Password) => this.setState({ Password })}
                         />
@@ -149,7 +153,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         marginHorizontal: 25,
-        marginTop:10,
+        marginTop: 10,
     },
     footerLink: {
 

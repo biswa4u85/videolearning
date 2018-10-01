@@ -8,10 +8,10 @@ export default class Signup extends React.Component {
     static navigationOptions = ({ navigation }) => ({
         headerTitle: 'Sign Up',
         // headerLeft: null,
-        headerRight:null,
+        headerRight: null,
         headerTintColor: Color.white,
-        headerStyle:Styles.headerBg,
-        headerTitleStyle:Styles.headerTitle,
+        headerStyle: Styles.headerBg,
+        headerTitleStyle: Styles.headerTitle,
     })
     state = {
         Name: '',
@@ -33,14 +33,18 @@ export default class Signup extends React.Component {
                             baseColor={Color.primary}
                             tintColor={Color.primary}
                             labelHeight={26}
+                            fontSize={18}
+                            lineWidth={2}
                             value={Name}
                             onChangeText={(Name) => this.setState({ Name })}
                         />
-                        <TextField                        
+                        <TextField
                             label='Email Address'
                             baseColor={Color.primary}
                             tintColor={Color.primary}
                             labelHeight={26}
+                            fontSize={18}
+                            lineWidth={2}
                             value={Email}
                             onChangeText={(Email) => this.setState({ Email })}
                         />
@@ -49,6 +53,8 @@ export default class Signup extends React.Component {
                             baseColor={Color.primary}
                             tintColor={Color.primary}
                             labelHeight={26}
+                            fontSize={18}
+                            lineWidth={2}
                             value={Mobile}
                             onChangeText={(Mobile) => this.setState({ Mobile })}
                         />
@@ -57,6 +63,8 @@ export default class Signup extends React.Component {
                             baseColor={Color.primary}
                             tintColor={Color.primary}
                             labelHeight={26}
+                            fontSize={18}
+                            lineWidth={2}
                             value={Password}
                             onChangeText={(Password) => this.setState({ Password })}
                         />
@@ -78,7 +86,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-    
+
     subTitle: {
         paddingTop: 15,
         paddingBottom: 25,
