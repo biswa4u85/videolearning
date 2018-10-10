@@ -194,7 +194,7 @@ class Index extends React.Component {
                         </View>
                         {/*Search End*/}
                         <Button style={styles.searchIcon} transparent onPress={() => this.searchBar.show()}>
-                            <Icon style={styles.headerIcon} name='search' />
+                            <Icon style={styles.searchIcon} name='search' />
                         </Button>
                         <View style={{ position: 'absolute', right: 0, top: 0, }}>
                             <Menu
@@ -290,12 +290,14 @@ const styles = StyleSheet.create({
         width: 50,
     },
     searchIcon: {
-        marginRight: 30,        
+        color:Color.white,
+        marginRight: 25, 
+        fontSize:22,       
     },
     headerIcon:{
         color:Color.white,
-        marginRight:20,
-        fontSize:20,
+        marginRight:15,
+        fontSize:18,
     }
 });
 
