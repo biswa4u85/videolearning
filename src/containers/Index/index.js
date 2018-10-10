@@ -290,16 +290,12 @@ const styles = StyleSheet.create({
         width: 50,
     },
     searchIcon: {
-        marginRight: 30,
+        marginRight: 30,        
     },
-<<<<<<< HEAD
     headerIcon:{
         color:Color.white,
         marginRight:20,
-=======
-    headerIcon: {
-        color: Color.white,
->>>>>>> 8a04c57a21c5ee55a8bfb029b7cb5d4adeb8e014
+        fontSize:20,
     }
 });
 
