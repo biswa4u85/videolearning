@@ -293,6 +293,7 @@ const styles = StyleSheet.create({
     },
     headerIcon:{
         color:Color.white,
+        marginRight:20,
     }
 });
 

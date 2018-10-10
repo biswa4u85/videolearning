@@ -13,6 +13,7 @@ import VideoDetails from '../containers/VideoDetails/videodetails'
 import Download from '../containers/Download/'
 import AboutUs from '../containers/AboutUs/'
 import Notifications from '../containers/Notifications/'
+import ViewAll from '../containers/ViewAll'
 
 
 const MainNavigator = StackNavigator({
@@ -29,6 +30,7 @@ const MainNavigator = StackNavigator({
     Download: { screen: Download },
     AboutUs: { screen: AboutUs },
     Notifications: { screen: Notifications },
+    ViewAll: { screen: ViewAll },
 
 }, {
     })

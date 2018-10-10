@@ -15,7 +15,7 @@ export default class UploadVideo extends React.Component {
     render() {
         const {navigate} = this.props
         return (
-            <ScrollView style={styles.container}>
+            <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
                 <View style={styles.bannerCont}>
                     {/* <ScrollView horizontal={true} pagingEnabled={true}> */}
                         <TouchableOpacity style={styles.bannerSliderBox}  onPress={() => navigate('VideoDetails')}>
@@ -31,7 +31,7 @@ export default class UploadVideo extends React.Component {
                     <View style={styles.sliderHeader}>
                         <Text style={styles.subTitle}>PMP - Lession 1</Text>                        
                     </View>
-                    <ScrollView style={styles.thumbSlider} horizontal={true}>
+                    <ScrollView style={styles.thumbSlider} horizontal={true} showsHorizontalScrollIndicator={false}>
                         <TouchableOpacity style={styles.thumbSlideBox} onPress={() => navigate('VideoDetails')}>
                             <View><Image style={styles.slideImg} source={require('../images/img1.jpg')} /></View>
                             <View style={styles.slideTxtArea}>
@@ -63,7 +63,7 @@ export default class UploadVideo extends React.Component {
                     <View style={styles.sliderHeader}>
                         <Text style={styles.subTitle}>PMP - Lession 2</Text>                        
                     </View>
-                    <ScrollView style={styles.thumbSlider} horizontal={true}>
+                    <ScrollView style={styles.thumbSlider} horizontal={true} showsHorizontalScrollIndicator={false}>
                         <TouchableOpacity style={styles.thumbSlideBox} onPress={() => navigate('VideoDetails')}>
                             <View><Image style={styles.slideImg} source={require('../images/img1.jpg')} /></View>
                             <View style={styles.slideTxtArea}>

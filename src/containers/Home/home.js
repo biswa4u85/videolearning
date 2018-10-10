@@ -15,9 +15,9 @@ export default class Home extends React.Component {
     render() {
         const {navigate} = this.props
         return (
-            <ScrollView style={styles.container}>
+            <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
                 <View style={styles.bannerCont}>
-                    <ScrollView horizontal={true} pagingEnabled={true}>
+                    <ScrollView horizontal={true} pagingEnabled={true} showsHorizontalScrollIndicator={false}>
                         <TouchableOpacity style={styles.bannerSliderBox} onPress={() => navigate('VideoDetails')}>
                             <AutoHeightImage width={Dimensions.get('window').width} source={require('../images/img1.jpg')} />
                             <View style={styles.bannerQuote}>
@@ -48,11 +48,11 @@ export default class Home extends React.Component {
                 <View styles={styles.thumbSlide}>
                     <View style={styles.sliderHeader}>
                         <Text style={styles.subTitle}>My Downloads</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigate('ViewAll')}>
                             <Text style={styles.moreTxt}>VIEW ALL</Text>
                         </TouchableOpacity>
                     </View>
-                    <ScrollView style={styles.thumbSlider} horizontal={true}>
+                    <ScrollView style={styles.thumbSlider} horizontal={true} showsHorizontalScrollIndicator={false}>
                         <TouchableOpacity style={styles.thumbSlideBox}  onPress={() => navigate('VideoDetails')}>
                             <View><Image style={styles.slideImg} source={require('../images/img1.jpg')} /></View>
                             <View style={styles.slideTxtArea}>
@@ -95,11 +95,11 @@ export default class Home extends React.Component {
                 <View styles={styles.thumbSlide}>
                     <View style={styles.sliderHeader}>
                         <Text style={styles.subTitle}>My Recent List</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigate('ViewAll')}>
                             <Text style={styles.moreTxt}>VIEW ALL</Text>
                         </TouchableOpacity>
                     </View>
-                    <ScrollView style={styles.thumbSlider} horizontal={true}>
+                    <ScrollView style={styles.thumbSlider} horizontal={true} showsHorizontalScrollIndicator={false}>
                         <TouchableOpacity style={styles.thumbSlideBox} onPress={() => navigate('VideoDetails')}>
                             <View><Image style={styles.slideImg} source={require('../images/img1.jpg')} /></View>
                             <View style={styles.slideTxtArea}>
@@ -148,11 +148,11 @@ export default class Home extends React.Component {
                 <View styles={styles.thumbSlide}>
                     <View style={styles.sliderHeader}>
                         <Text style={styles.subTitle}>My Watch List</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigate('ViewAll')}>
                             <Text style={styles.moreTxt}>VIEW ALL</Text>
                         </TouchableOpacity>
                     </View>
-                    <ScrollView style={styles.thumbSlider} horizontal={true}>
+                    <ScrollView style={styles.thumbSlider} horizontal={true} showsHorizontalScrollIndicator={false}>
                         <TouchableOpacity style={styles.thumbSlideBox} onPress={() => navigate('VideoDetails')}>
                             <View><Image style={styles.slideImg} source={require('../images/img1.jpg')} /></View>
                             <View style={styles.slideTxtArea}>

@@ -8,23 +8,25 @@ import AutoHeightImage from 'react-native-auto-height-image';
 import { Video } from 'expo';
 import VideoPlayer from '@expo/videoplayer';
 import { Color,Styles } from '@common'
-
+import { Back } from '../../navigation/IconNav'
 
 
 export default class VideoDetails extends React.Component {
     static navigationOptions = ({ navigation }) => ({
-        header: null,
-        // headerTitle: 'Watch Later',
-        // headerRight: null,
-        // headerTintColor: Color.white,
-        // headerStyle: { backgroundColor: 'transparent' },
-        // headerTitleStyle: Styles.headerTitle,
+        headerTitle: 'Video Details',
+        // headerLeft: null,
+        headerRight:null,
+        headerTintColor: Color.white,
+        headerStyle:Styles.headerBg,
+        headerTitleStyle:Styles.headerTitle,
     })
+    
     render() {
-
+        const {navigate} = this.props
         return (
             <ScrollView style={styles.container}>
-                <View style={styles.bannerCont}>
+                <View style={styles.bannerCont}>                    
+                    {/* {Back(navigate)} */}
                     <View style={styles.bannerSliderBox}>
                     <VideoPlayer
   videoProps={{

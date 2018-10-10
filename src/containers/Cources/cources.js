@@ -9,7 +9,7 @@ import { Color } from '@common'
 export default class Cources extends React.Component {
     render() {
         return (
-            <ScrollView style={styles.container}>
+            <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
                 <View style={styles.bannerCont}>
                     {/* <ScrollView horizontal={true} pagingEnabled={true}> */}
                         <TouchableOpacity style={styles.bannerSliderBox}>
@@ -25,14 +25,14 @@ export default class Cources extends React.Component {
                     <View style={styles.sliderHeader}>
                         <Text style={styles.subTitle}>Maths</Text>                        
                     </View>
-                    {/* <ScrollView style={styles.thumbSlider} horizontal={true}> */}
+                    <ScrollView style={styles.thumbSlider} horizontal={true} showsHorizontalScrollIndicator={false}>
                         <TouchableOpacity style={styles.thumbSlideBox}>
                             <View><Image style={styles.slideImg} source={require('../images/img1.jpg')} /></View>
                             <View style={styles.slideTxtArea}>
                                 <Text style={styles.slideTitle}>Lorem ipsum</Text>
                             </View>
                         </TouchableOpacity>                                               
-                    {/* </ScrollView> */}
+                    </ScrollView>
                 </View>                
                 
             </ScrollView>

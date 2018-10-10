@@ -37,7 +37,7 @@ export default class Quiz extends React.Component {
 
         return (
 
-            <ScrollView style={styles.container}>
+            <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
                 <View style={styles.bannerCont}>
                     {/* <ScrollView horizontal={true} pagingEnabled={true}> */}
                     <TouchableOpacity style={styles.bannerSliderBox} onPress={this.props.showScaleAnimationDialogQuiz}>
@@ -53,7 +53,7 @@ export default class Quiz extends React.Component {
                     <View style={styles.sliderHeader}>
                         <Text style={styles.subTitle}>Random Quiz</Text>
                     </View>
-                    <ScrollView style={styles.thumbSlider} horizontal={true}>
+                    <ScrollView style={styles.thumbSlider} horizontal={true} showsHorizontalScrollIndicator={false}>
                         <TouchableOpacity style={styles.thumbSlideBox} onPress={this.props.showScaleAnimationDialogQuiz}>
                             <View><Image style={styles.slideImg} source={require('../images/img1.jpg')} /></View>
                             <View style={styles.slideTxtArea}>
