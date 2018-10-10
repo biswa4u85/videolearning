@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, Share
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Tab, Tabs, ScrollableTab } from 'native-base';
 import ModalFilterPicker from 'react-native-modal-filter-picker'
 import { ScrollView } from 'react-native-gesture-handler';
+import EntypoIcon from 'react-native-vector-icons/Entypo'
 import SearchBar from 'react-native-searchbar';
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 import { Color } from '@common';
@@ -173,7 +174,7 @@ class Index extends React.Component {
 
                 <View style={styles.headerBg}>
                     <View>
-                        {TopMenu()}                        
+                        {TopMenu()}
                     </View>
                     <View>
                         <Title style={styles.title}>Mobile Learning App</Title>
@@ -195,11 +196,11 @@ class Index extends React.Component {
                         <Button style={styles.searchIcon} transparent onPress={() => this.searchBar.show()}>
                             <Icon style={styles.headerIcon} name='search' />
                         </Button>
-                         <View style={{ position: 'absolute', right: 0, top: 0, }}>
+                        <View style={{ position: 'absolute', right: 0, top: 0, }}>
                             <Menu
                                 ref={this.setMenuRef}
                                 button={<Button transparent onPress={() => this.showMenu()}>
-                                    <Icon style={styles.headerIcon} name='more' />
+                                    <EntypoIcon style={styles.headerIcon} name='dots-three-vertical' />
                                 </Button>}
                                 style={{ width: 200, }}>
                                 <MenuItem onPress={() => { this.hideMenu(); navigate('Login') }}><Icon name='md-log-in' style={styles.rightMenuIcon} /> Logi In</MenuItem>
@@ -212,7 +213,7 @@ class Index extends React.Component {
                             </Menu>
                         </View>
                     </View>
-                    <SearchBar                        
+                    <SearchBar
                         ref={(ref) => this.searchBar = ref}
                         data={items}
                         handleResults={this._handleResults}
@@ -255,13 +256,13 @@ class Index extends React.Component {
 const styles = StyleSheet.create({
     headerBg: {
         backgroundColor: Color.primary,
-        justifyContent:'space-between',
+        justifyContent: 'space-between',
         alignItems: 'center',
-        paddingTop: 35,        
+        paddingTop: 35,
         // paddingBottom: 25,       
-        flexDirection:'row',
-        
-    },    
+        flexDirection: 'row',
+
+    },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
@@ -288,12 +289,17 @@ const styles = StyleSheet.create({
         fontSize: 18,
         width: 50,
     },
-    searchIcon:{
-        marginRight:30,
+    searchIcon: {
+        marginRight: 30,
     },
+<<<<<<< HEAD
     headerIcon:{
         color:Color.white,
         marginRight:20,
+=======
+    headerIcon: {
+        color: Color.white,
+>>>>>>> 8a04c57a21c5ee55a8bfb029b7cb5d4adeb8e014
     }
 });
 

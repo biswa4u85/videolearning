@@ -30,6 +30,8 @@ export default class ForgotPass extends React.Component {
                             baseColor={Color.primary}
                             tintColor={Color.primary}
                             labelHeight={26}
+                            fontSize={18}
+                            lineWidth={2}
                             value={Email}
                             onChangeText={(Email) => this.setState({ Email })}
                         />
@@ -51,7 +53,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
     },
-   
+
     headerTitle: {
         fontSize: 21,
         fontWeight: 'bold',
