@@ -35,7 +35,7 @@ const Back = (navigation, iconBack) => (<TouchableOpacity
     onPress={() => {
         navigation.goBack(null)
     }}>
-    <Icon name={'ios-arrow-back'} size={20} color={Color.white} />
+    <Icon name={'arrow-back'} size={20} color={Color.white} />
 </TouchableOpacity>)
 
 export { Back, Logo, TopMenu, AddChild, EmptyView }

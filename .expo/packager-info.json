@@ -1,18 +1,6 @@
 {
-  "devToolsPort": 19002,
-<<<<<<< HEAD
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 17600,
-  "expoServerNgrokUrl": "https://u4-e3g.rakesh-biswal768.videolearning.exp.direct",
-  "packagerNgrokUrl": "https://packager.u4-e3g.rakesh-biswal768.videolearning.exp.direct",
-  "ngrokPid": 11844
-=======
   "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": "https://u4-e3g.biswa4u85.videolearning.exp.direct",
-  "packagerNgrokUrl": "https://packager.u4-e3g.biswa4u85.videolearning.exp.direct",
-  "ngrokPid": 74112
->>>>>>> 8171cc3815b8effbdc6e1d32de84334b728d57ed
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
