@@ -1,6 +1,9 @@
 {
-  "expoServerPort": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerPort": 19000,
+  "expoServerNgrokUrl": "https://u4-e3g.rakesh-biswal768.videolearning.exp.direct",
+  "packagerNgrokUrl": "https://packager.u4-e3g.rakesh-biswal768.videolearning.exp.direct",
+  "ngrokPid": 1084,
+  "packagerPort": 19001,
+  "packagerPid": 4028,
+  "devToolsPort": 19002
 }

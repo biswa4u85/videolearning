@@ -66,7 +66,8 @@ class Index extends React.Component {
             picked: null,
 
             items,
-            results: []
+            results: [],
+            moreMenu: false,
         };
         this._handleResults = this._handleResults.bind(this);
     }
@@ -124,6 +125,13 @@ class Index extends React.Component {
     state = {
         dialogShow: false,
     };
+
+    moreMenuOpen(){
+        this.moreMenu.show();
+    }
+    moreMenuClose(){
+        this.moreMenu.hide();
+    }
 
     showScaleAnimationDialog = () => {
         this.scaleAnimationDialog.show();
@@ -196,8 +204,11 @@ class Index extends React.Component {
                         <Button style={styles.searchIcon} transparent onPress={() => this.searchBar.show()}>
                             <Icon style={styles.searchIcon} name='search' />
                         </Button>
-                        <View style={{ position: 'absolute', right: 0, top: 0, }}>
-                            <Menu
+                        <Button style={styles.moreMenuIcon} transparent onPress={() => this.moreMenuOpen()}>
+                            <EntypoIcon style={styles.headerIcon} name='dots-three-vertical' />
+                        </Button>
+                        <View>
+                            {/* <Menu
                                 ref={this.setMenuRef}
                                 button={<Button transparent onPress={() => this.showMenu()}>
                                     <EntypoIcon style={styles.headerIcon} name='dots-three-vertical' />
@@ -210,7 +221,17 @@ class Index extends React.Component {
                                 <MenuItem onPress={() => { this.hideMenu(); this.openShare() }}><Icon name='share' style={styles.rightMenuIcon} /> Share</MenuItem>
                                 <MenuItem onPress={() => { this.hideMenu(); this.showScaleAnimationDialog() }}><Icon name='send' style={styles.rightMenuIcon} /> Send Feedback</MenuItem>
                                 <MenuItem onPress={() => { this.hideMenu(); navigate('Notifications') }}><Icon name='notifications' style={styles.rightMenuIcon} /> Notification</MenuItem>
-                            </Menu>
+                            </Menu> */}
+                            
+                            <View style={styles.topRightMenu}>
+                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); navigate('Login') }}><Icon name='md-log-in' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Logi In</Text></TouchableOpacity>
+                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); navigate('WatchLater') }}><Icon name='watch' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Watch Later</Text></TouchableOpacity>
+                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); navigate('Download') }}><Icon name='download' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Download List</Text></TouchableOpacity>
+                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); navigate('AboutUs') }}><Icon name='people' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>About Us</Text></TouchableOpacity>
+                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); this.openShare() }}><Icon name='share' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Share</Text></TouchableOpacity>
+                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); this.showScaleAnimationDialog()}}><Icon name='send' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Send Feedback</Text></TouchableOpacity>
+                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); navigate('Notifications') }}><Icon name='notifications' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Notification</Text></TouchableOpacity>
+                            </View>
                         </View>
                     </View>
                     <SearchBar
@@ -294,11 +315,37 @@ const styles = StyleSheet.create({
         marginRight: 25, 
         fontSize:22,       
     },
+    moreMenuIcon:{
+        position:'absolute',
+        right:15,
+        top:0,
+    },
     headerIcon:{
-        color:Color.white,
-        marginRight:15,
+        color:Color.white,       
         fontSize:18,
-    }
+    },
+    topRightMenu:{
+        backgroundColor:Color.white,
+        borderRadius:3,
+        paddingHorizontal:10,
+        width:200,
+        position:'absolute',
+        left:0,
+        top:0,
+    },
+    menuList:{
+        flexDirection:'row',
+        marginVertical:10,
+    },
+    rightMenuIcon:{
+        fontSize:18,
+        color:Color.black,
+        marginRight:10,
+    },
+    rightMenuTxt:{
+        fontSize:14,
+        color:Color.black,
+    },
 });
 
 export default Index
