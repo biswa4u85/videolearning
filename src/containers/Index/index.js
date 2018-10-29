@@ -62,7 +62,7 @@ class Index extends React.Component {
         super();
         this.state = {
             options: [],
-            visible: false,
+            menuVisible: false,
             picked: null,
 
             items,
@@ -76,36 +76,36 @@ class Index extends React.Component {
         this.setState({ results });
     }
 
-    onShow = () => {
-        this.setState({ visible: true });
-    }
+    // onShow = () => {
+    //     this.setState({ visible: true });
+    // }
 
-    onSelect = (picked) => {
-        this.setState({
-            picked: picked,
-            visible: false
-        })
-    }
+    // onSelect = (picked) => {
+    //     this.setState({
+    //         picked: picked,
+    //         visible: false
+    //     })
+    // }
 
-    onCancel = () => {
-        this.setState({
-            visible: false
-        });
-    }
+    // onCancel = () => {
+    //     this.setState({
+    //         visible: false
+    //     });
+    // }
 
-    _menu = null;
+    // _menu = null;
 
-    setMenuRef = ref => {
-        this._menu = ref;
-    };
+    // setMenuRef = ref => {
+    //     this._menu = ref;
+    // };
 
-    hideMenu() {
-        this._menu.hide();
-    };
+    // hideMenu() {
+    //     this._menu.hide();
+    // };
 
-    showMenu = () => {
-        this._menu.show();
-    };
+    // showMenu = () => {
+    //     this._menu.show();
+    // };
 
     openShare() {
         Share.share({
@@ -126,10 +126,10 @@ class Index extends React.Component {
         dialogShow: false,
     };
 
-    moreMenuOpen(){
+    moreMenuOpen() {
         this.moreMenu.show();
     }
-    moreMenuClose(){
+    moreMenuClose() {
         this.moreMenu.hide();
     }
 
@@ -157,10 +157,15 @@ class Index extends React.Component {
         this.fadeAnimationDialogQuiz.show();
     }
 
+    menuToggle() {
+        const { menuVisible } = this.state
+        this.setState({ menuVisible: !menuVisible })
+    }
+
     render() {
         const { navigate } = this.props.navigation
+        const { menuVisible } = this.state
         return (
-
             <Container>
                 <PopupDialog
                     dialogStyle={{ padding: 10, backgroundColor: 'rgba(52, 52, 52, 0)' }}
@@ -176,6 +181,16 @@ class Index extends React.Component {
                     dialogAnimation={scaleAnimation}>
                     <QuizPopup navigate={navigate} onPress={() => { this.scaleAnimationDialogQuiz.dismiss(); }} />
                 </PopupDialog>
+                <View style={menuVisible ? styles.topRightMenuOpen : styles.topRightMenu} >
+                        {/* <Icon name='md-log-in' style={styles.indicateArrow} /> */}
+                        <TouchableOpacity style={styles.menuList} onPress={() => { this.menuToggle(); navigate('Login') }}><Icon name='md-log-in' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Logi In</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.menuList} onPress={() => { this.menuToggle(); navigate('WatchLater') }}><Icon name='watch' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Watch Later</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.menuList} onPress={() => { this.menuToggle(); navigate('Download') }}><Icon name='download' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Download List</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.menuList} onPress={() => { this.menuToggle(); navigate('AboutUs') }}><Icon name='people' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>About Us</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.menuList} onPress={() => { this.menuToggle(); this.openShare() }}><Icon name='share' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Share</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.menuList} onPress={() => { this.menuToggle(); this.showScaleAnimationDialog() }}><Icon name='send' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Send Feedback</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.menuList} onPress={() => { this.menuToggle(); navigate('Notifications') }}><Icon name='notifications' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Notification</Text></TouchableOpacity>
+                </View>
                 {/*POPUP MENU Start*/}
 
                 {/*POPUP MENU End*/}
@@ -187,28 +202,30 @@ class Index extends React.Component {
                     <View>
                         <Title style={styles.title}>Mobile Learning App</Title>
                     </View>
-                    <View>
-                        {/*Search Start*/}
-                        <View>
-                            {
-                                this.state.results.map((result, i) => {
-                                    return (
-                                        <Text key={i}>
-                                            {typeof result === 'object' && !(result instanceof Array) ? 'gold object!' : result.toString()}
-                                        </Text>
-                                    );
-                                })
-                            }
-                        </View>
-                        {/*Search End*/}
-                        <Button style={styles.searchIcon} transparent onPress={() => this.searchBar.show()}>
-                            <Icon style={styles.searchIcon} name='search' />
-                        </Button>
-                        <Button style={styles.moreMenuIcon} transparent onPress={() => this.moreMenuOpen()}>
-                            <EntypoIcon style={styles.headerIcon} name='dots-three-vertical' />
-                        </Button>
-                        <View>
-                            {/* <Menu
+
+                    {/*Search Start*/}
+                    {/* <View>
+                        {
+                            this.state.results.map((result, i) => {
+                                return (
+                                    <Text key={i}>
+                                        {typeof result === 'object' && !(result instanceof Array) ? 'gold object!' : result.toString()}
+                                    </Text>
+                                );
+                            })
+                        }
+                    </View> */}
+                    {/*Search End*/}
+
+                    <Button transparent onPress={() => this.searchBar.show()}>
+                        <Icon style={styles.searchIcon} name='search' />
+                    </Button>
+                    <Button style={styles.moreMenuIcon} transparent onPress={() => this.menuToggle()}
+                       >
+                        <EntypoIcon style={styles.headerIcon} name='dots-three-vertical' />
+                    </Button>
+
+                    {/* <Menu
                                 ref={this.setMenuRef}
                                 button={<Button transparent onPress={() => this.showMenu()}>
                                     <EntypoIcon style={styles.headerIcon} name='dots-three-vertical' />
@@ -221,26 +238,15 @@ class Index extends React.Component {
                                 <MenuItem onPress={() => { this.hideMenu(); this.openShare() }}><Icon name='share' style={styles.rightMenuIcon} /> Share</MenuItem>
                                 <MenuItem onPress={() => { this.hideMenu(); this.showScaleAnimationDialog() }}><Icon name='send' style={styles.rightMenuIcon} /> Send Feedback</MenuItem>
                                 <MenuItem onPress={() => { this.hideMenu(); navigate('Notifications') }}><Icon name='notifications' style={styles.rightMenuIcon} /> Notification</MenuItem>
-                            </Menu> */}
-                            
-                            <View style={styles.topRightMenu}>
-                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); navigate('Login') }}><Icon name='md-log-in' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Logi In</Text></TouchableOpacity>
-                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); navigate('WatchLater') }}><Icon name='watch' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Watch Later</Text></TouchableOpacity>
-                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); navigate('Download') }}><Icon name='download' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Download List</Text></TouchableOpacity>
-                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); navigate('AboutUs') }}><Icon name='people' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>About Us</Text></TouchableOpacity>
-                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); this.openShare() }}><Icon name='share' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Share</Text></TouchableOpacity>
-                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); this.showScaleAnimationDialog()}}><Icon name='send' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Send Feedback</Text></TouchableOpacity>
-                                <TouchableOpacity style={styles.menuList} onPress={() => { this.moreMenuClose(); navigate('Notifications') }}><Icon name='notifications' style={styles.rightMenuIcon} /><Text style={styles.rightMenuTxt}>Notification</Text></TouchableOpacity>
-                            </View>
-                        </View>
-                    </View>
-                    <SearchBar
-                        ref={(ref) => this.searchBar = ref}
-                        data={items}
-                        handleResults={this._handleResults}
-                        hideOnLoad
-                    />
+                            </Menu> */}                  
+
                 </View>
+                <SearchBar
+                    ref={(ref) => this.searchBar = ref}
+                    data={items}
+                    handleResults={this._handleResults}
+                    hideOnLoad
+                />
 
                 <Tabs renderTabBar={() => <ScrollableTab />}>
                     <Tab textStyle={{ color: '#fff' }} tabStyle={{ backgroundColor: Color.primary }} activeTabStyle={{ backgroundColor: Color.primary }} heading="Home">
@@ -280,7 +286,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         paddingTop: 35,
-        // paddingBottom: 25,       
         flexDirection: 'row',
 
     },
@@ -311,41 +316,60 @@ const styles = StyleSheet.create({
         width: 50,
     },
     searchIcon: {
-        color:Color.white,
-        marginRight: 25, 
-        fontSize:22,       
+        color: Color.white,
+        marginRight: 25,
+        fontSize: 22,
     },
-    moreMenuIcon:{
+    moreMenuIcon: {
+        // position:'absolute',
+        right: 15,
+        top: 0,
+    },
+    headerIcon: {
+        color: Color.white,
+        fontSize: 18,
+    },
+    topRightMenu: {
+        backgroundColor: Color.white,
+        borderRadius: 3,
+        paddingHorizontal: 10,
+        width:200, 
+        height:0,       
         position:'absolute',
-        right:15,
-        top:0,
+        right:0,
+        top:70,
+        zIndex:999,        
     },
-    headerIcon:{
-        color:Color.white,       
-        fontSize:18,
-    },
-    topRightMenu:{
-        backgroundColor:Color.white,
-        borderRadius:3,
-        paddingHorizontal:10,
-        width:200,
+    topRightMenuOpen: {
+        backgroundColor: Color.white,
+        borderRadius: 3,
+        paddingHorizontal: 10,
+        width:200,       
         position:'absolute',
-        left:0,
-        top:0,
+        right:0,
+        top:80,
+        zIndex:999,    
+        overflow: 'visible',                
     },
-    menuList:{
-        flexDirection:'row',
-        marginVertical:10,
+    menuList: {
+        flexDirection: 'row',
+        marginVertical: 10,
     },
-    rightMenuIcon:{
-        fontSize:18,
-        color:Color.black,
-        marginRight:10,
+    rightMenuIcon: {
+        fontSize: 18,
+        color: Color.black,
+        marginRight: 10,
     },
-    rightMenuTxt:{
-        fontSize:14,
-        color:Color.black,
+    rightMenuTxt: {
+        fontSize: 14,
+        color: Color.black,
     },
+    // indicateArrow:{
+    //     position:'absolute',
+    //     right:20,
+    //     top:-10,
+    //     zIndex:999999,
+    // },
 });
 
 export default Index
